@@ -1,6 +1,14 @@
 # pgn_fen
 
-"pgn_fen is a command line tool to work with chess pgn or fen."
+pgn_fen is a command line tool to work with chess pgn or fen.
+
+Completed: FEN to board display.
+
+TODO: command line interface for fen to board display. 
+
+TODO: pgn parser
+
+TODO: pgn to fen converter
 
 ## Installation
 
