@@ -1,7 +1,8 @@
 require_relative 'chess_constants'
 
 class Display
-  attr_accessor :fen, :piece_array
+  attr_accessor :fen
+  attr_reader :piece_array
 
   def initialize(fen)
     @fen = fen
