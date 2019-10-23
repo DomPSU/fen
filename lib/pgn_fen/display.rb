@@ -42,22 +42,22 @@ class Display
     file_notation_row += "\n"
   end
 
-  def print_top_row
+  def top_row
     counter = 0
-
-    print "  "
-    print unicode_board(:top_left_corner)
-    print unicode_board(:horizontal)
-    print unicode_board(:horizontal)
+    top_row = "  "
+    top_row += unicode_board(:top_left_corner)
+    top_row += unicode_board(:horizontal)
+    top_row += unicode_board(:horizontal)
 
     loop do
-      print unicode_board(:top_mid)
-      print unicode_board(:horizontal)
-      print unicode_board(:horizontal)
+      top_row += unicode_board(:top_mid)
+      top_row += unicode_board(:horizontal)
+      top_row += unicode_board(:horizontal)
       counter += 1
       break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
-    puts unicode_board(:top_right_corner)
+    top_row += unicode_board(:top_right_corner)
+    top_row += "\n"
   end
 
   def print_piece_row(rank_notation) 

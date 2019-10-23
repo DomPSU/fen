@@ -28,7 +28,13 @@ class DisplayTests < Minitest::Test
     assert_equal "   a  b  c  d  e  f  g  h  \n", @display.file_notation_row
   end
 
-  def test_print_top_row
+  def test_top_row
+    top_row_string = "  \u250C\u2500\u2500\u252c\u2500\u2500\u252c"\
+                     "\u2500\u2500\u252c\u2500\u2500\u252c"\
+                     "\u2500\u2500\u252c\u2500\u2500\u252c"\
+                     "\u2500\u2500\u252c\u2500\u2500\u2510\n"
+
+    assert_equal top_row_string, @display.top_row
   end
 
   def test_print_piece_row
@@ -45,5 +51,4 @@ class DisplayTests < Minitest::Test
 
   def test_unicode_piece
   end
-
 end
