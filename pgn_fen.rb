@@ -18,7 +18,7 @@ class Display
   end
 
   def convert_fen_to_piece_array
-    fen_array = @fen.split("/",)
+    fen_array = @fen.split("/")
     first_rank_and_details = fen_array.last.split(" ")
     first_rank = first_rank_and_details[0]
     piece_array = fen_array
@@ -26,14 +26,13 @@ class Display
     @piece_array = piece_array
   end
 
-=begin
   def contents
     print_file_notation
     print_top_row
 
-    RANK_ARRAY.reverse.each do |value| 
-      print_piece_row(value)
-      print_line_row unless value == RANK_ARRAY[0]
+    RANK_ARRAY.each do |rank|
+      print_piece_row(rank.to_i)
+      print_line_row unless rank.to_i == 8
     end
 
     print_bottom_row
@@ -41,7 +40,7 @@ class Display
 
     puts("")
   end
-=end
+
   def print_file_notation
     print "   "
     FILE_ARRAY.each { |value| print "#{value}  "}
@@ -70,11 +69,11 @@ class Display
     print(rank_notation)
     print " "
 
-    @piece_array[rank_notation-1].each_char do |board_square|
+    @piece_array[rank_notation - 1].each_char do |board_square|
       print unicode_board(:vertical)
 
       if board_square.to_i > 1 
-        (board_square.to_i - 1).times do |x|
+        (board_square.to_i - 1).times do
           print "  "
           print unicode_board(:vertical)
         end
@@ -168,17 +167,5 @@ end
 fen = "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
 
 a = Display.new(fen)
-a.print_top_row
-a.print_line_row
-a.print_bottom_row
 
-puts(a.piece_array)
-puts("          ")
-a.print_piece_row(1)
-a.print_piece_row(2)
-a.print_piece_row(3)
-a.print_piece_row(4)
-a.print_piece_row(5)
-a.print_piece_row(6)
-a.print_piece_row(7)
-a.print_piece_row(8)
+a.contents
