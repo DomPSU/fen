@@ -73,7 +73,13 @@ class Display
     @piece_array[rank_notation-1].each_char do |board_square|
       print unicode_board(:vertical)
 
-      if board_square == true
+      if board_square.to_i > 1 
+        (board_square.to_i - 1).times do |x|
+          print "  "
+          print unicode_board(:vertical)
+        end
+        print " "
+      elsif board_square.to_i == 1
         print " "
       else
         print unicode_piece(board_square)
@@ -159,7 +165,7 @@ class Display
   end
 end
 
-fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+fen = "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
 
 a = Display.new(fen)
 a.print_top_row
@@ -167,5 +173,12 @@ a.print_line_row
 a.print_bottom_row
 
 puts(a.piece_array)
+puts("          ")
 a.print_piece_row(1)
-
+a.print_piece_row(2)
+a.print_piece_row(3)
+a.print_piece_row(4)
+a.print_piece_row(5)
+a.print_piece_row(6)
+a.print_piece_row(7)
+a.print_piece_row(8)
