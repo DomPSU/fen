@@ -139,29 +139,27 @@ class Display
 
     return hash.fetch(key).encode('utf-8')   
   end
-=begin
-  def unicode_piece(piece, piece_color)
-   key = piece.class.to_s.downcase.to_sym
 
-    white_hash = {king: "\u2654",
-                  queen: "\u2655",
-                  rook: "\u2656",
-                  bishop: "\u2657",
-                  knight: "\u2658",
-                  pawn: "\u2659"}
+  def unicode_piece(piece)
+
+    white_hash = {K: "\u2654",
+                  Q: "\u2655",
+                  R: "\u2656",
+                  B: "\u2657",
+                  N: "\u2658",
+                  P: "\u2659"}
 
    return white_hash.fetch(key).encode('utf-8') if piece_color == "white"
 
-    black_hash = {king: "\u265A",
-                  queen: "\u265B",
-                  rook: "\u265C",
-                  bishop: "\u265D",
-                  knight: "\u265E",
-                  pawn: "\u265F"}
+    black_hash = {k: "\u265A",
+                  q: "\u265B",
+                  r: "\u265C",
+                  b: "\u265D",
+                  n: "\u265E",
+                  p: "\u265F"}
 
     return black_hash.fetch(key).encode('utf-8') if piece_color == "black"
   end
-=end
 end
 
 fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
