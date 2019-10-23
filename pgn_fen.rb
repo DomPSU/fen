@@ -28,7 +28,7 @@ class Display
     @piece_array = piece_array
   end
 
-  def contents
+  def board
     print_file_notation
     print_top_row
 
@@ -79,7 +79,7 @@ class Display
           print "  "
           print unicode_board(:vertical)
         end
-        
+
         print " "
       elsif board_square.to_i == 1
         print " "
@@ -169,6 +169,6 @@ end
 
 fen = "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
 
-a = Display.new(fen)
+display = Display.new(fen)
 
-a.contents
+display.board
