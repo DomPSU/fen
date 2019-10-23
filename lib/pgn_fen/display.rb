@@ -60,32 +60,33 @@ class Display
     top_row += "\n"
   end
 
-  def print_piece_row(rank_notation) 
-    print(rank_notation)
-    print " "
+  def piece_row(rank_notation) 
+    piece_row = rank_notation.to_s
+    piece_row += " "
 
-    @piece_array[rank_notation - 1].each_char do |board_square|
-      print unicode_board(:vertical)
+    @piece_array.reverse[rank_notation - 1].each_char do |board_square|
+      piece_row += unicode_board(:vertical)
 
       if board_square.to_i > 1 
         (board_square.to_i - 1).times do
-          print "  "
-          print unicode_board(:vertical)
+          piece_row += "  "
+          piece_row += unicode_board(:vertical)
         end
 
-        print " "
+        piece_row += " "
       elsif board_square.to_i == 1
-        print " "
+        piece_row += " "
       else
-        print unicode_piece(board_square)
+        piece_row += unicode_piece(board_square)
       end
-      print " "
+      piece_row += " "
     end
 
-    print unicode_board(:vertical)
+    piece_row += unicode_board(:vertical)
 
-    print " "
-    puts(rank_notation)
+    piece_row += " "
+    piece_row += rank_notation.to_s
+    piece_row += "\n"
   end
 
   def print_line_row
