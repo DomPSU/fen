@@ -25,7 +25,7 @@ class Display
     print_file_notation_row
     print_top_row
 
-    RANK_ARRAY.each do |rank|
+    ChessConstants::RANK_ARRAY.each do |rank|
       print_piece_row(rank.to_i)
       print_line_row unless rank.to_i == 8
     end
@@ -38,7 +38,7 @@ class Display
 
   def print_file_notation_row
     print "   "
-    FILE_ARRAY.each { |value| print "#{value}  "}
+    ChessConstants::FILE_ARRAY.each { |value| print "#{value}  "}
     puts ""
   end
 
@@ -55,7 +55,7 @@ class Display
       print unicode_board(:horizontal)
       print unicode_board(:horizontal)
       counter += 1
-      break if counter == NUMBER_OF_COLUMNS - 1
+      break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
     puts unicode_board(:top_right_corner)
   end
@@ -101,7 +101,7 @@ class Display
       print unicode_board(:horizontal)
       print unicode_board(:horizontal)
       counter += 1
-      break if counter == NUMBER_OF_COLUMNS - 1
+      break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
     puts unicode_board(:right_mid)    
   end
@@ -120,7 +120,7 @@ class Display
       print unicode_board(:horizontal)
       print unicode_board(:horizontal)
       counter += 1
-      break if counter == NUMBER_OF_COLUMNS - 1
+      break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
     puts unicode_board(:bottom_right_corner)  
   end

@@ -25,6 +25,7 @@ class DisplayTests < Minitest::Test
   end 
 
   def test_print_file_notation_row
+    assert_equal "r1bqk2r", @display.print_file_notation_row
   end
 
   def test_print_top_row
