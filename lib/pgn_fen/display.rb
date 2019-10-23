@@ -36,10 +36,10 @@ class Display
     puts("")
   end
 
-  def print_file_notation_row
-    print "   "
-    ChessConstants::FILE_ARRAY.each { |value| print "#{value}  "}
-    puts ""
+  def file_notation_row
+    file_notation_row = "   "
+    ChessConstants::FILE_ARRAY.each { |value| file_notation_row += "#{value}  "}
+    file_notation_row += "\n"
   end
 
   def print_top_row

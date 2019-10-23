@@ -24,8 +24,8 @@ class DisplayTests < Minitest::Test
     assert_nil @display.piece_array[8]
   end 
 
-  def test_print_file_notation_row
-    assert_equal "r1bqk2r", @display.print_file_notation_row
+  def test_file_notation_row
+    assert_equal "   a  b  c  d  e  f  g  h  \n", @display.file_notation_row
   end
 
   def test_print_top_row
