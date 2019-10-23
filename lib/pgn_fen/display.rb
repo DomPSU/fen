@@ -21,7 +21,7 @@ class Display
   end
 
   def board
-    print_file_notation
+    print_file_notation_row
     print_top_row
 
     RANK_ARRAY.each do |rank|
@@ -30,12 +30,12 @@ class Display
     end
 
     print_bottom_row
-    print_file_notation
+    print_file_notation_row
 
     puts("")
   end
 
-  def print_file_notation
+  def print_file_notation_row
     print "   "
     FILE_ARRAY.each { |value| print "#{value}  "}
     puts ""
