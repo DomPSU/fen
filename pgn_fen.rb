@@ -9,11 +9,23 @@ end
 class Display
   include ChessConstants
 
-  attr_accessor :fen
+  attr_accessor :fen, :piece_array
 
   def initialize(fen)
     @fen = fen
+
+    @piece_array = convert_fen_to_piece_array
   end
+
+  def convert_fen_to_piece_array
+    fen_array = @fen.split("/",)
+    first_rank_and_details = fen_array.last.split(" ")
+    first_rank = first_rank_and_details[0]
+    piece_array = fen_array
+    piece_array[-1] = first_rank
+    @piece_array = piece_array
+  end
+
 =begin
   def contents
     print_l_notation
@@ -126,7 +138,7 @@ class Display
             cross: "\u253c"}
 
     return hash.fetch(key).encode('utf-8')   
-  
+  end
 =begin
   def unicode_piece(piece, piece_color)
    key = piece.class.to_s.downcase.to_sym
@@ -158,4 +170,6 @@ a = Display.new(fen)
 a.print_top_row
 a.print_line_row
 a.print_bottom_row
+
+puts(a.piece_array)
 
