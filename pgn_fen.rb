@@ -111,7 +111,7 @@ class Display
     end
     puts unicode_board(:bottom_right_corner)  
   end
-=begin
+
   def unicode_board(key)
     hash = {horizontal: "\u2500",
             vertical: "\u2502",
@@ -126,8 +126,8 @@ class Display
             cross: "\u253c"}
 
     return hash.fetch(key).encode('utf-8')   
-  end
-
+  
+=begin
   def unicode_piece(piece, piece_color)
    key = piece.class.to_s.downcase.to_sym
 
@@ -158,3 +158,4 @@ a = Display.new(fen)
 a.print_top_row
 a.print_line_row
 a.print_bottom_row
+
