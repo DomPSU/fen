@@ -2,8 +2,8 @@ module ChessConstants
   NUMBER_OF_ROWS = 8
   NUMBER_OF_COLUMNS = 8
   
-  L_ARRAY = ["a", "b", "c", "d", "e", "f", "g", "h"]
-  N_ARRAY = ["1", "2", "3", "4", "5", "6", "7", "8"]
+  FILE_ARRAY = ["a", "b", "c", "d", "e", "f", "g", "h"]
+  RANK_ARRAY = ["1", "2", "3", "4", "5", "6", "7", "8"]
 end
 
 class Display
@@ -28,23 +28,23 @@ class Display
 
 =begin
   def contents
-    print_l_notation
+    print_file_notation
     print_top_row
 
-    N_ARRAY.reverse.each do |value| 
+    RANK_ARRAY.reverse.each do |value| 
       print_piece_row(value)
-      print_line_row unless value == N_ARRAY[0]
+      print_line_row unless value == RANK_ARRAY[0]
     end
 
     print_bottom_row
-    print_l_notation
+    print_file_notation
 
     puts("")
   end
 =end
-  def print_l_notation
+  def print_file_notation
     print "   "
-    L_ARRAY.each { |value| print "#{value}  "}
+    FILE_ARRAY.each { |value| print "#{value}  "}
     puts ""
   end
 
@@ -65,18 +65,18 @@ class Display
     end
     puts unicode_board(:top_right_corner)
   end
-=begin
-  def print_piece_row(n_notation) 
-    print(n_notation)
+
+  def print_piece_row(rank_notation) 
+    print(rank_notation)
     print " "
 
-    @board.array[NUMBER_OF_ROWS - n_notation.to_i].each do |board_square|
+    @piece_array[rank_notation-1].each_char do |board_square|
       print unicode_board(:vertical)
 
-      if board_square.piece.nil?
+      if board_square == true
         print " "
       else
-        print unicode_piece(board_square.piece, board_square.piece.color)
+        print unicode_piece(board_square)
       end
       print " "
     end
@@ -84,9 +84,9 @@ class Display
     print unicode_board(:vertical)
 
     print " "
-    puts(n_notation)
+    puts(rank_notation)
   end
-=end
+
   def print_line_row
     counter = 0
 
@@ -142,23 +142,20 @@ class Display
 
   def unicode_piece(piece)
 
-    white_hash = {K: "\u2654",
-                  Q: "\u2655",
-                  R: "\u2656",
-                  B: "\u2657",
-                  N: "\u2658",
-                  P: "\u2659"}
+    hash = {K: "\u2654",
+            Q: "\u2655",
+            R: "\u2656",
+            B: "\u2657",
+            N: "\u2658",
+            P: "\u2659",
+            k: "\u265A",
+            q: "\u265B",
+            r: "\u265C",
+            b: "\u265D",
+            n: "\u265E",
+            p: "\u265F"}
 
-   return white_hash.fetch(key).encode('utf-8') if piece_color == "white"
-
-    black_hash = {k: "\u265A",
-                  q: "\u265B",
-                  r: "\u265C",
-                  b: "\u265D",
-                  n: "\u265E",
-                  p: "\u265F"}
-
-    return black_hash.fetch(key).encode('utf-8') if piece_color == "black"
+    return hash.fetch(piece.to_sym).encode('utf-8')
   end
 end
 
@@ -170,4 +167,5 @@ a.print_line_row
 a.print_bottom_row
 
 puts(a.piece_array)
+a.print_piece_row(1)
 
