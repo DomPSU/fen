@@ -31,7 +31,7 @@ Or install it yourself as:
 
 ## Usage
 
-$fen display r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5
+$ fen display r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5
 ```
    a  b  c  d  e  f  g  h  
   ┌──┬──┬──┬──┬──┬──┬──┬──┐
