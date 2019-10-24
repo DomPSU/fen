@@ -68,8 +68,20 @@ class DisplayTests < Minitest::Test
 
     assert_equal bottom_row_string, @display.bottom_row
   end
-  
+
   def test_unicode_board
+    assert_equal "\u2500", @display.unicode_board(:horizontal)
+    assert_equal "\u2502", @display.unicode_board(:vertical)
+    assert_equal "\u250C", @display.unicode_board(:top_left_corner)
+    assert_equal "\u2510", @display.unicode_board(:top_right_corner)
+    assert_equal "\u2514", @display.unicode_board(:bottom_left_corner)
+    assert_equal "\u2518", @display.unicode_board(:bottom_right_corner)
+
+    assert_equal "\u252c", @display.unicode_board(:top_mid)
+    assert_equal "\u251c", @display.unicode_board(:left_mid)
+    assert_equal "\u2524", @display.unicode_board(:right_mid)
+    assert_equal "\u2534", @display.unicode_board(:bottom_mid)
+    assert_equal "\u253c", @display.unicode_board(:cross)
   end
 
   def test_unicode_piece
