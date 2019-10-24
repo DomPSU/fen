@@ -5,8 +5,8 @@ module PgnFen
   class CLI < Thor
     desc "display FEN", "Displays fen."
     def display(fen)
-      display = Pgn_Fen::Display.new(fen)
-      print (display.board)
+      display = Display.new(fen).board
+      print(display)
     end
   end
 end
