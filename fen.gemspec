@@ -5,7 +5,7 @@ require "fen/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "fen"
-  spec.version       = PgnFen::VERSION
+  spec.version       = Fen::VERSION
   spec.authors       = ["Dominic Lupo"]
   spec.email         = ["DominicLupo5318@gmail.com"]
 
