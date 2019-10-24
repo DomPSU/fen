@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "pgn_fen/version"
+require "fen/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "pgn_fen"
+  spec.name          = "fen"
   spec.version       = PgnFen::VERSION
   spec.authors       = ["Dominic Lupo"]
   spec.email         = ["DominicLupo5318@gmail.com"]
 
-  spec.summary       = "pgn_fen is a command line tool to work with chess pgn or fen."
+  spec.summary       = "fen is a command line tool to work with chess fen or pgn."
   spec.description   = "Descript placeholder"
-  spec.homepage      = "https://github.com/DomPSU/pgn_fen"
+  spec.homepage      = "https://github.com/DomPSU/fen"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/DomPSU/pgn_fen"
-    spec.metadata["changelog_uri"] = "https://github.com/DomPSU/pgn_fen"
+    spec.metadata["source_code_uri"] = "https://github.com/DomPSU/fen"
+    spec.metadata["changelog_uri"] = "https://github.com/DomPSU/fen"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."

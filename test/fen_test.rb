@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "pgn_fen"
+require "fen"
 
 class DisplayTests < Minitest::Test
   def setup

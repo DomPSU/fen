@@ -1,3 +1,3 @@
-module PgnFen
+module Fen
   VERSION = "0.1.0"
 end

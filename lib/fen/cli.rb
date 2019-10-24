@@ -1,7 +1,7 @@
 require 'thor'
-require 'pgn_fen'
+require 'fen'
 
-module PgnFen
+module Fen
   class CLI < Thor
     desc "display FEN", "Displays fen."
     def display(*fen)
