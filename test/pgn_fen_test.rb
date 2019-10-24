@@ -76,7 +76,6 @@ class DisplayTests < Minitest::Test
     assert_equal "\u2510", @display.unicode_board(:top_right_corner)
     assert_equal "\u2514", @display.unicode_board(:bottom_left_corner)
     assert_equal "\u2518", @display.unicode_board(:bottom_right_corner)
-
     assert_equal "\u252c", @display.unicode_board(:top_mid)
     assert_equal "\u251c", @display.unicode_board(:left_mid)
     assert_equal "\u2524", @display.unicode_board(:right_mid)
@@ -85,5 +84,19 @@ class DisplayTests < Minitest::Test
   end
 
   def test_unicode_piece
+    assert_equal "\u2654", @display.unicode_piece(:K)
+    assert_equal "\u2655", @display.unicode_piece(:Q)
+    assert_equal "\u2656", @display.unicode_piece(:R)
+    assert_equal "\u2657", @display.unicode_piece(:B)
+    assert_equal "\u2658", @display.unicode_piece(:N)
+    assert_equal "\u2659", @display.unicode_piece(:P)
+
+    assert_equal "\u265A", @display.unicode_piece(:k)
+    assert_equal "\u265B", @display.unicode_piece(:q)
+    assert_equal "\u265C", @display.unicode_piece(:r)
+    assert_equal "\u265D", @display.unicode_piece(:b)
+    assert_equal "\u265E", @display.unicode_piece(:n)
+    assert_equal "\u265F", @display.unicode_piece(:p)
+
   end
 end
