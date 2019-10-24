@@ -1,21 +1,24 @@
-# pgn_fen
+# fen
 
-pgn_fen is a command line tool to work with chess pgn or fen.
+fen is a command line tool to work with chess fen or pgn.
 
-Completed: FEN to board display.
+## Features
 
-TODO: command line interface for fen to board display. 
+Command line interface to convert fen into unicode chessboard with
+file and rank notation.
 
-TODO: pgn parser
+## TODO
 
-TODO: pgn to fen converter
+pgn parser
+
+pgn to fen converter
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pgn_fen'
+gem 'fen'
 ```
 
 And then execute:
@@ -24,7 +27,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install pgn_fen
+    $ gem install fen
 
 ## Usage
 
@@ -38,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/DomPSU/pgn_fen.
+Bug reports and pull requests are welcome on GitHub at https://github.com/DomPSU/fen.
 
 ## License
 
