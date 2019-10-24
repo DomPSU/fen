@@ -38,66 +38,25 @@ class DisplayTests < Minitest::Test
   end
 
   def test_piece_row
-    first_rank_string = "1 \u2502\u2656 \u2502\u2658 \u2502\u2657 \u2502\u2655 \u2502\u2654\ \u2502  \u2502  \u2502\u2656 \u2502 1\n"
+    first_rank_string =    "1 \u2502\u2656 \u2502\u2658 \u2502\u2657 \u2502\u2655 \u2502\u2654 \u2502  \u2502  \u2502\u2656 \u2502 1\n"
+    second_rank_string =   "2 \u2502\u2659 \u2502\u2659 \u2502  \u2502  \u2502  \u2502\u2659 \u2502\u2659 \u2502\u2659 \u2502 2\n"
+    third_rank_string =    "3 \u2502  \u2502  \u2502\u2659 \u2502  \u2502\  \u2502\u2658 \u2502  \u2502  \u2502 3\n" 
+    fourth_rank_string =   "4 \u2502  \u2502  \u2502\u2657 \u2502\u2659 \u2502\u2659 \u2502  \u2502  \u2502  \u2502 4\n" 
+    fifth_rank_string =    "5 \u2502  \u2502  \u2502\u265D \u2502  \u2502\u265F \u2502  \u2502  \u2502  \u2502 5\n" 
+    sixth_rank_string =    "6 \u2502  \u2502  \u2502\u265E \u2502  \u2502  \u2502\u265E \u2502  \u2502  \u2502 6\n"
+    seventh_rank_string =  "7 \u2502\u265F \u2502\u265F \u2502\u265F \u2502\u265F \u2502\  \u2502\u265F \u2502\u265F \u2502\u265F \u2502 7\n"
+    eigth_rank_string =    "8 \u2502\u265C \u2502  \u2502\u265D \u2502\u265B \u2502\u265A \u2502  \u2502  \u2502\u265C \u2502 8\n" 
 
-    assert_equal first_rank_string, @display.piece_row(1)
+    assert_equal first_rank_string,   @display.piece_row(1)
+    assert_equal second_rank_string,  @display.piece_row(2)
+    assert_equal third_rank_string,   @display.piece_row(3)
+    assert_equal fourth_rank_string,  @display.piece_row(4)
+    assert_equal fifth_rank_string,   @display.piece_row(5)
+    assert_equal sixth_rank_string,   @display.piece_row(6)
+    assert_equal seventh_rank_string, @display.piece_row(7)
+    assert_equal eigth_rank_string,   @display.piece_row(8)
   end
-=begin
-  def unicode_board(key)
-    hash = {horizontal: "\u2500",
-            vertical: "\u2502",
-            top_left_corner: "\u250C",
-            top_right_corner: "\u2510",
-            bottom_left_corner: "\u2514",
-            bottom_right_corner: "\u2518",
-            top_mid: "\u252c",
-            left_mid: "\u251c",
-            right_mid: "\u2524",
-            bottom_mid: "\u2534",
-            cross: "\u253c"}
 
-  hash = {K: "\u2654",
-  Q: "\u2655",
-  R: "\u2656",
-  B: "\u2657",
-  N: "\u2658",
-  P: "\u2659",
-  k: "\u265A",
-  q: "\u265B",
-  r: "\u265C",
-  b: "\u265D",
-  n: "\u265E",
-  p: "\u265F"}
-
-  def piece_row(rank_notation) 
-    piece_row = rank_notation.to_s
-    piece_row += " "
-
-    @piece_array.reverse[rank_notation - 1].each_char do |board_square|
-      piece_row += unicode_board(:vertical)
-
-      if board_square.to_i > 1 
-        (board_square.to_i - 1).times do
-          piece_row += "  "
-          piece_row += unicode_board(:vertical)
-        end
-
-        piece_row += " "
-      elsif board_square.to_i == 1
-        piece_row += " "
-      else
-        piece_row += unicode_piece(board_square)
-      end
-      piece_row += " "
-    end
-
-    piece_row += unicode_board(:vertical)
-
-    piece_row += " "
-    piece_row += rank_notation.to_s
-    piece_row += "\n"
-  end
-=end
   def test_print_line_row
   end
 
