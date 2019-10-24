@@ -22,18 +22,18 @@ class Display
   end
 
   def board
-    print_file_notation_row
-    print_top_row
+    board = file_notation_row
+    board += top_row
 
     ChessConstants::RANK_ARRAY.each do |rank|
-      print_piece_row(rank.to_i)
-      print_line_row unless rank.to_i == 8
+      board += piece_row(rank.to_i)
+      board += line_row unless rank.to_i == 8
     end
 
-    print_bottom_row
-    print_file_notation_row
+    board += bottom_row
+    board += file_notation_row
 
-    puts("")
+    board += "\n"
   end
 
   def file_notation_row
@@ -77,7 +77,7 @@ class Display
       elsif board_square.to_i == 1
         piece_row += " "
       else
-        piece_row += unicode_piece(board_square)
+        piece_row += unicode_piece(board_square.to_sym)
       end
       piece_row += " "
     end
@@ -159,6 +159,6 @@ class Display
             n: "\u265E",
             p: "\u265F"}
 
-    return hash.fetch(piece.to_sym).encode('utf-8')
+    return hash.fetch(piece).encode('utf-8')
   end
 end

@@ -12,6 +12,9 @@ class DisplayTests < Minitest::Test
     assert_equal fen, @display.fen
   end
 
+  def test_board
+  end
+
   def test_convert_fen_to_piece_array
     assert_equal "r1bqk2r", @display.piece_array[0]
     assert_equal "pppp1ppp", @display.piece_array[1]
@@ -97,6 +100,5 @@ class DisplayTests < Minitest::Test
     assert_equal "\u265D", @display.unicode_piece(:b)
     assert_equal "\u265E", @display.unicode_piece(:n)
     assert_equal "\u265F", @display.unicode_piece(:p)
-
   end
 end
