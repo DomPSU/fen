@@ -10,7 +10,11 @@ Gem::Specification.new do |spec|
   spec.email         = ["DominicLupo5318@gmail.com"]
 
   spec.summary       = "fen is a command line tool to work with chess fen or pgn."
-  spec.description   = "Descript placeholder"
+  spec.description   = "Currently fen supports a command line tool to convert"\
+                       "fen to a unicode chess board with rank and file notation"\
+                       "Future versions will include a pgn parser and a pgn to fen"\
+                       "converter."
+                       
   spec.homepage      = "https://github.com/DomPSU/fen"
   spec.license       = "MIT"
 
