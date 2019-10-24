@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../test', __FILE__)
 
-require 'test_helper'
+require_relative 'test_helper'
 require 'minitest/autorun'
 
 class FirstRun < Minitest::Test
