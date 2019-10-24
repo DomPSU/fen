@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pgn_fen (0.1.0)
+    fen (0.1.0)
       thor
 
 GEM
@@ -53,7 +53,7 @@ PLATFORMS
 DEPENDENCIES
   aruba (~> 1.0.0.pre.alpha.4)
   bundler (~> 1.17)
-  pgn_fen!
+  fen!
   rake (~> 10.0)
 
 BUNDLED WITH
