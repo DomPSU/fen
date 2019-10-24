@@ -54,27 +54,6 @@ $fen display r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 
    a  b  c  d  e  f  g  h  
 ```
 
-`   a  b  c  d  e  f  g  h  
-  ┌──┬──┬──┬──┬──┬──┬──┬──┐
-8 │♜ │  │♝ │♛ │♚ │  │  │♜ │ 8
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-7 │♟ │♟ │♟ │♟ │  │♟ │♟ │♟ │ 7
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-6 │  │  │♞ │  │  │♞ │  │  │ 6
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-5 │  │  │♝ │  │♟ │  │  │  │ 5
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-4 │  │  │♗ │♙ │♙ │  │  │  │ 4
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-3 │  │  │♙ │  │  │♘ │  │  │ 3
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-2 │♙ │♙ │  │  │  │♙ │♙ │♙ │ 2
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-1 │♖ │♘ │♗ │♕ │♔ │  │  │♖ │ 1
-  └──┴──┴──┴──┴──┴──┴──┴──┘
-   a  b  c  d  e  f  g  h  
-`
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
