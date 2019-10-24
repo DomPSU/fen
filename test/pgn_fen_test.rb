@@ -4,15 +4,38 @@ require "pgn_fen"
 class DisplayTests < Minitest::Test
   def setup
     fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
+
     @display = Display.new(fen)
   end
 
   def test_display_fen_returns_fen
     fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
+
     assert_equal fen, @display.fen
   end
 
   def test_board
+    board = @display.file_notation_row
+    board += @display.top_row
+    board += @display.piece_row(8)
+    board += @display.line_row
+    board += @display.piece_row(7)
+    board += @display.line_row
+    board += @display.piece_row(6)
+    board += @display.line_row
+    board += @display.piece_row(5)
+    board += @display.line_row
+    board += @display.piece_row(4)
+    board += @display.line_row
+    board += @display.piece_row(3)
+    board += @display.line_row
+    board += @display.piece_row(2)
+    board += @display.line_row
+    board += @display.piece_row(1)
+    board += @display.bottom_row
+    board += @display.file_notation_row
+
+    assert_equal board, @display.board
   end
 
   def test_convert_fen_to_piece_array

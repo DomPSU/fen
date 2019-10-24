@@ -25,15 +25,13 @@ class Display
     board = file_notation_row
     board += top_row
 
-    ChessConstants::RANK_ARRAY.each do |rank|
+    ChessConstants::RANK_ARRAY.reverse.each do |rank|
       board += piece_row(rank.to_i)
-      board += line_row unless rank.to_i == 8
+      board += line_row unless rank.to_i == 1
     end
 
     board += bottom_row
     board += file_notation_row
-
-    board += "\n"
   end
 
   def file_notation_row
