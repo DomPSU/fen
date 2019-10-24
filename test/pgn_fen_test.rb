@@ -58,14 +58,17 @@ class DisplayTests < Minitest::Test
   end
 
   def test_line_row
-    line_row_string = "  \u251c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u2524"
+    line_row_string = "  \u251c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u2524\n"
 
     assert_equal line_row_string, @display.line_row
   end
 
-  def test_print_bottom_row
-  end
+  def test_bottom_row
+    bottom_row_string = "  \u2514\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2518\n"
 
+    assert_equal bottom_row_string, @display.bottom_row
+  end
+  
   def test_unicode_board
   end
 

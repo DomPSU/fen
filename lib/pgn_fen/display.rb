@@ -104,26 +104,28 @@ class Display
       counter += 1
       break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
-    line_row += unicode_board(:right_mid)    
+    line_row += unicode_board(:right_mid)
+    line_row += "\n"    
   end
 
-  def print_bottom_row 
+  def bottom_row 
 
     counter = 0
 
-    print "  "
-    print unicode_board(:bottom_left_corner)
-    print unicode_board(:horizontal)
-    print unicode_board(:horizontal)
+    bottom_row = "  "
+    bottom_row += unicode_board(:bottom_left_corner)
+    bottom_row += unicode_board(:horizontal)
+    bottom_row += unicode_board(:horizontal)
 
     loop do
-      print unicode_board(:bottom_mid)
-      print unicode_board(:horizontal)
-      print unicode_board(:horizontal)
+      bottom_row += unicode_board(:bottom_mid)
+      bottom_row += unicode_board(:horizontal)
+      bottom_row += unicode_board(:horizontal)
       counter += 1
       break if counter == ChessConstants::NUMBER_OF_COLUMNS - 1
     end
-    puts unicode_board(:bottom_right_corner)  
+    bottom_row += unicode_board(:bottom_right_corner)  
+    bottom_row += "\n"
   end
 
   def unicode_board(key)
