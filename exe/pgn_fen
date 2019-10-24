@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'pgn_fen/cli'
+Pgn_Fen::CLI.start
