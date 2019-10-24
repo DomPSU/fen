@@ -57,7 +57,10 @@ class DisplayTests < Minitest::Test
     assert_equal eigth_rank_string,   @display.piece_row(8)
   end
 
-  def test_print_line_row
+  def test_line_row
+    line_row_string = "  \u251c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u2524"
+
+    assert_equal line_row_string, @display.line_row
   end
 
   def test_print_bottom_row
