@@ -41,14 +41,31 @@ class DisplayTests < Minitest::Test
   end
 
   def test_piece_row
-    first_rank_string =    "1 \u2502\u2656 \u2502\u2658 \u2502\u2657 \u2502\u2655 \u2502\u2654 \u2502  \u2502  \u2502\u2656 \u2502 1\n"
-    second_rank_string =   "2 \u2502\u2659 \u2502\u2659 \u2502  \u2502  \u2502  \u2502\u2659 \u2502\u2659 \u2502\u2659 \u2502 2\n"
-    third_rank_string =    "3 \u2502  \u2502  \u2502\u2659 \u2502  \u2502\  \u2502\u2658 \u2502  \u2502  \u2502 3\n" 
-    fourth_rank_string =   "4 \u2502  \u2502  \u2502\u2657 \u2502\u2659 \u2502\u2659 \u2502  \u2502  \u2502  \u2502 4\n" 
-    fifth_rank_string =    "5 \u2502  \u2502  \u2502\u265D \u2502  \u2502\u265F \u2502  \u2502  \u2502  \u2502 5\n" 
-    sixth_rank_string =    "6 \u2502  \u2502  \u2502\u265E \u2502  \u2502  \u2502\u265E \u2502  \u2502  \u2502 6\n"
-    seventh_rank_string =  "7 \u2502\u265F \u2502\u265F \u2502\u265F \u2502\u265F \u2502\  \u2502\u265F \u2502\u265F \u2502\u265F \u2502 7\n"
-    eigth_rank_string =    "8 \u2502\u265C \u2502  \u2502\u265D \u2502\u265B \u2502\u265A \u2502  \u2502  \u2502\u265C \u2502 8\n" 
+    first_rank_string =   "1 \u2502\u2656 \u2502\u2658 \u2502\u2657 \u2502"\
+                          "\u2655 \u2502\u2654 \u2502  \u2502  \u2502\u2656 "\
+                          "\u2502 1\n"
+
+    second_rank_string =  "2 \u2502\u2659 \u2502\u2659 \u2502  \u2502  \u2502"\
+                          "  \u2502\u2659 \u2502\u2659 \u2502\u2659 \u2502 2\n"
+
+    third_rank_string =   "3 \u2502  \u2502  \u2502\u2659 \u2502  \u2502"\
+                          "  \u2502\u2658 \u2502  \u2502  \u2502 3\n" 
+
+    fourth_rank_string =  "4 \u2502  \u2502  \u2502\u2657 \u2502\u2659 "\
+                          "\u2502\u2659 \u2502  \u2502  \u2502  \u2502 4\n" 
+
+    fifth_rank_string =   "5 \u2502  \u2502  \u2502\u265D \u2502  "\
+                          "\u2502\u265F \u2502  \u2502  \u2502  \u2502 5\n" 
+
+    sixth_rank_string =   "6 \u2502  \u2502  \u2502\u265E \u2502  \u2502  "\
+                          "\u2502\u265E \u2502  \u2502  \u2502 6\n"
+
+    seventh_rank_string = "7 \u2502\u265F \u2502\u265F \u2502\u265F "\
+                          "\u2502\u265F \u2502\  \u2502\u265F \u2502\u265F "\
+                          "\u2502\u265F \u2502 7\n"
+
+    eigth_rank_string =   "8 \u2502\u265C \u2502  \u2502\u265D \u2502\u265B "\
+                          "\u2502\u265A \u2502  \u2502  \u2502\u265C \u2502 8\n" 
 
     assert_equal first_rank_string,   @display.piece_row(1)
     assert_equal second_rank_string,  @display.piece_row(2)
@@ -61,13 +78,18 @@ class DisplayTests < Minitest::Test
   end
 
   def test_line_row
-    line_row_string = "  \u251c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u2524\n"
+    line_row_string = "  \u251c\u2500\u2500\u253c\u2500\u2500\u253c\u2500"\
+                      "\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u253c\u2500"\
+                      "\u2500\u253c\u2500\u2500\u253c\u2500\u2500\u2524\n"
 
     assert_equal line_row_string, @display.line_row
   end
 
   def test_bottom_row
-    bottom_row_string = "  \u2514\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2518\n"
+    bottom_row_string = "  \u2514\u2500\u2500\u2534\u2500\u2500\u2534\u2500"\
+                        "\u2500\u2534\u2500\u2500\u2534\u2500\u2500\u2534"\
+                        "\u2500\u2500\u2534\u2500\u2500\u2534\u2500\u2500"\
+                        "\u2518\n"
 
     assert_equal bottom_row_string, @display.bottom_row
   end
