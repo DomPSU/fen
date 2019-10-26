@@ -1,5 +1,3 @@
-require_relative 'chess_constants'
-
 class Fen
   attr_accessor :fen, :board, :piece_placement, :active_color, :castling, 
                 :en_passant, :halfmove_clock, :fullmove_clock
@@ -21,7 +19,6 @@ class Fen
     @fullmove_clock = fen_array[5]
   end
 
-=begin
   def board
     board = ""
     @piece_placement.each do |rank|
@@ -36,16 +33,6 @@ class Fen
     end
      board
   end
-
-  def display
-    display = ""
-    @board.each do |rank|
-      display += rank.join
-      display += "\n" 
-    end
-    display
-  end
-=end
 end
 
 fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
@@ -60,3 +47,4 @@ puts(var.castling)
 puts(var.en_passant)
 puts(var.halfmove_clock)
 puts(var.fullmove_clock)
+puts(var.board)
