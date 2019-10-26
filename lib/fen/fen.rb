@@ -13,27 +13,15 @@ class Fen
 
   def split
     fen_array = @fen.split(" ")
-    #@piece_placement = piece_placement(fen_array[0])
+    @piece_placement = fen_array[0].split("/")
     @active_color = fen_array[1]
     @castling = fen_array[2]
     @en_passant = fen_array[3]
     @halfmove_clock = fen_array[4]
     @fullmove_clock = fen_array[5]
-    @halfmove_clock = fen_array[4]
   end
+
 =begin
-  def piece_placement(fen_array)
-    fen_array = @fen.split("/")
-
-    first_rank_and_details = fen_array.last.split(" ")
-    first_rank = first_rank_and_details[0]
-
-    piece_placement = fen_array
-    piece_placement[-1] = first_rank
-    
-    piece_placement
-  end
-
   def board
     board = ""
     @piece_placement.each do |rank|
@@ -65,7 +53,8 @@ fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
 var = Fen.new(fen)
 
 puts(var.fen)
-#puts(var.piece_placement)
+print(var.piece_placement)
+puts(var.piece_placement)
 puts(var.active_color)
 puts(var.castling)
 puts(var.en_passant)
