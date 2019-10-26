@@ -23,7 +23,18 @@ class FenToBoard
   end
 
   def convert_board_array_to_display_array
-    @display_array = [["_"]*8]*8
+    @display_array = ""
+    board_array.each do |rank|
+      rank.each_char do |board_square|
+        if board_square.to_i == 0
+          @display_array += board_square
+        elsif
+          @display_array += "_" * board_square.to_i
+        end
+      end
+      @display_array += "\n"
+    end
+    @display_array
   end
 
   def display
@@ -39,7 +50,14 @@ end
 fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
 
 var = FenToBoard.new(fen)
-#print(var.convert_board_array_to_display_array)
-print(var.display)
+#print(var.display)
+puts(var.board_array)
+print(var.display_array)
+
+
+
+
+
+
 
 #change piece array to board array in display class. Just makes more sense.
