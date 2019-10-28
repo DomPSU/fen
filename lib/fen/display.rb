@@ -2,11 +2,11 @@ require_relative 'chess_constants'
 require_relative 'fen_state'
 
 class Display
-  attr_accessor :fen
+  attr_accessor :fen, :piece_array
 
   def initialize(fen)
     @fen = fen
-    @piece_placement = FenState.new(fen).piece_placement
+    @piece_array= FenState.new(fen).piece_placement
   end
 
   def board
