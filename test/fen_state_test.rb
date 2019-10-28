@@ -5,7 +5,7 @@ class FenStateTests < Minitest::Test
     @FenState = FenState.new(fen)
   end
 
-  def test_split
+  def test_split_fen
     assert_equal "r1bqk2r", @FenState.piece_placement[0]
     assert_equal "pppp1ppp", @FenState.piece_placement[1]
     assert_equal "2n2n2", @FenState.piece_placement[2]
@@ -27,6 +27,30 @@ class FenStateTests < Minitest::Test
     assert_equal "5", @FenState.fullmove_clock
   end 
   
-  def test board
+  def test_board
+    board = "r_bqk__r\n"\
+            "pppp_ppp\n"\
+            "__n__n__\n"\
+            "__b_p___\n"\
+            "__BPP___\n"\
+            "__P__N__\n"\
+            "PP___PPP\n"\
+            "RNBQK__R\n"
+
+    assert_equal board, @FenState.board
+  end
+
+  def test_board_array
+    board_array = ["r_bqk__r",
+                   "pppp_ppp",
+                   "__n__n__",
+                   "__b_p___",
+                   "__BPP___",
+                   "__P__N__",
+                   "PP___PPP",
+                   "RNBQK__R"]
+
+    assert_equal board_array, @FenState.board_array
   end
 end
+
