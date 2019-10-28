@@ -1,24 +1,12 @@
 require_relative 'chess_constants'
+require_relative 'fen_state'
 
 class Display
   attr_accessor :fen
-  attr_reader :piece_array
 
   def initialize(fen)
     @fen = fen
-    @piece_array = convert_fen_to_piece_array
-  end
-
-  def convert_fen_to_piece_array
-    fen_array = @fen.split("/")
-
-    first_rank_and_details = fen_array.last.split(" ")
-    first_rank = first_rank_and_details[0]
-
-    piece_array = fen_array
-    piece_array[-1] = first_rank
-    
-    @piece_array = piece_array
+    @piece_placement = FenState.new(fen).piece_placement
   end
 
   def board

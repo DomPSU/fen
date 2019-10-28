@@ -1,4 +1,4 @@
-class Fen
+class FenState
   attr_accessor :fen, :board, :piece_placement, :active_color, :castling, 
                 :en_passant, :halfmove_clock, :fullmove_clock
 
@@ -37,7 +37,7 @@ end
 
 fen = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5"
 
-var = Fen.new(fen)
+var = FenState.new(fen)
 
 puts(var.fen)
 print(var.piece_placement)
