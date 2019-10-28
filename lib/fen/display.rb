@@ -2,11 +2,10 @@ require_relative 'chess_constants'
 require_relative 'fen_state'
 
 class Display
-  attr_accessor :fen, :piece_array
+  attr_writer :fen
 
   def initialize(fen)
-    @fen = fen
-    @piece_array= FenState.new(fen).piece_placement
+    @fen = FenState.new(fen)
   end
 
   def board
@@ -50,7 +49,7 @@ class Display
     piece_row = rank_notation.to_s
     piece_row += " "
 
-    @piece_array.reverse[rank_notation - 1].each_char do |board_square|
+    @fen.piece_placement.reverse[rank_notation - 1].each_char do |board_square|
       piece_row += unicode_board(:vertical)
 
       if board_square.to_i > 1 
