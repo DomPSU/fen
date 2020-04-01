@@ -1,17 +1,11 @@
 # fen
 
-fen is a command line tool to work with chess fen or pgn.
-
-## Features
-
-Command line interface to convert fen into unicode chessboard with
+fen is a command line tool to convert fen into unicode chessboard with
 file and rank notation.
 
-## TODO
+## Testing
 
-pgn parser
-
-pgn to fen converter
+Fully tested using Minitest.
 
 ## Installation
 
