@@ -26,27 +26,9 @@ Or install it yourself as:
 ## Usage
 
 $ fen display r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R b KQkq - 0 5
-```
-   a  b  c  d  e  f  g  h  
-  ┌──┬──┬──┬──┬──┬──┬──┬──┐
-8 │♜ │  │♝ │♛ │♚ │  │  │♜ │ 8
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-7 │♟ │♟ │♟ │♟ │  │♟ │♟ │♟ │ 7
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-6 │  │  │♞ │  │  │♞ │  │  │ 6
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-5 │  │  │♝ │  │♟ │  │  │  │ 5
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-4 │  │  │♗ │♙ │♙ │  │  │  │ 4
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-3 │  │  │♙ │  │  │♘ │  │  │ 3
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-2 │♙ │♙ │  │  │  │♙ │♙ │♙ │ 2
-  ├──┼──┼──┼──┼──┼──┼──┼──┤
-1 │♖ │♘ │♗ │♕ │♔ │  │  │♖ │ 1
-  └──┴──┴──┴──┴──┴──┴──┴──┘
-   a  b  c  d  e  f  g  h  
-```
+
+[![command_line_example.png](https://github.com/DomPSU/fen/blob/master/command_line_example.png)]
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/DomPSU/fen.
